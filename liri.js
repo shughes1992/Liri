@@ -75,12 +75,26 @@ request(queryUrl, function(error, response, body) {
 
     // Parse the body of the site and recover just the imdbRating
     // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
-    console.log(JSON.parse(body));
+    console.log(JSON.parse(body).Title);
+    console.log(JSON.parse(body).Year);
+    console.log(JSON.parse(body).imdbRating);
+    console.log(JSON.parse(body).Ratings[1].Value);
+    console.log(JSON.parse(body).Country);
+    console.log(JSON.parse(body).Language);
+    console.log(JSON.parse(body).Plot);
+    console.log(JSON.parse(body).Actors);
   }
 });
 }
 
-
+// * Title of the movie.
+// * Year the movie came out.
+// * IMDB Rating of the movie.
+// * Rotten Tomatoes Rating of the movie.
+// * Country where the movie was produced.
+// * Language of the movie.
+// * Plot of the movie.
+// * Actors in the movie.
 //---------------------------------------------------------------------------------------------
 
 
