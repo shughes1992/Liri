@@ -27,11 +27,6 @@ function spotifyThisSong() {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
-        //  Artist(s)
-        //  The song's name
-        //  A preview link of the song from Spotify
-        //  The album that the song is from
-
         // console.log(data.tracks.items[0])
         console.log(data.tracks.items[0].artists[0].name);
         console.log(data.tracks.items[0].name);
@@ -66,9 +61,8 @@ function movieThis() {
     var movieName = programChoice.split(" ").join("+");
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
-    // This line is just to help us debug against the actual URL.
 
-    
+
     request(queryUrl, function (error, response, body) {
 
         // If the request is successful
@@ -76,8 +70,8 @@ function movieThis() {
 
             // Parse the body of the site and recover just the imdbRating
             // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
-            console.log(JSON.parse(body).Title);
-            console.log(JSON.parse(body).Year);
+            console.log(JSON.parse(body).Title) + " is the title";
+            console.log(JSON.parse(body).Year) + " is the year it was made";
             console.log(JSON.parse(body).imdbRating);
             console.log(JSON.parse(body).Ratings[1].Value);
             console.log(JSON.parse(body).Country);
@@ -88,14 +82,6 @@ function movieThis() {
     });
 }
 
-// * Title of the movie.
-// * Year the movie came out.
-// * IMDB Rating of the movie.
-// * Rotten Tomatoes Rating of the movie.
-// * Country where the movie was produced.
-// * Language of the movie.
-// * Plot of the movie.
-// * Actors in the movie.
 //---------------------------------------------------------------------------------------------
 
 
